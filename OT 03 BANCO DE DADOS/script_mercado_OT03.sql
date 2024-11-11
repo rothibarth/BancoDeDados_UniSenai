@@ -40,10 +40,47 @@ insert into vendas_has_produto values (6, 2, 1);
 
 /* Exerc 1. */
 
-select *
-from vendas
-JOIN produto ON vendas.idvenda = produto.idproduto
-WHERE produto.descricao = 'Escova dental';
+SELECT V.*
+FROM Vendas V
+JOIN vendas_has_produto VP ON V.idvenda = VP.idvenda
+JOIN produto P ON VP.idproduto = P.idproduto
+WHERE P.descricao = 'Escova dental';
+
+/* Exerc 2. */ 
+
+SELECT V.data_venda
+FROM Vendas V
+JOIN vendas_has_produto VP ON V.idvenda = VP.idvenda
+JOIN Produto P ON VP.idproduto = P.idproduto
+WHERE P.descricao = 'Creme dental';
+
+/* Exerc 3 */ 
+
+SELECT P.descricao
+FROM Vendas V
+JOIN vendas_has_produto VP ON V.idvenda = VP.idvenda
+JOIN Produto P ON VP.idproduto = P.idproduto
+WHERE V.data_venda = '2024-01-23';
+
+/* Exerc 4 */ 
+
+SELECT DISTINCT C.descricao
+FROM Vendas V
+JOIN vendas_has_produto VP ON V.idvenda = VP.idvenda
+JOIN Produto P ON VP.idproduto = P.idproduto
+JOIN Categoria C ON P.idcategoria = C.idcategoria;
+
+/* Exerc 5 */ 
+
+SELECT V.*
+FROM Vendas V
+JOIN vendas_has_produto VP ON V.idvenda = VP.idvenda
+JOIN Produto P ON VP.idproduto = P.idproduto
+JOIN Categoria C ON P.idcategoria = C.idcategoria
+WHERE C.descricao != 'Higiene pessoal';
+
+
+
 
 
 
