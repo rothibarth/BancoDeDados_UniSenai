@@ -38,7 +38,12 @@ insert into vendas_has_produto values (4, 2, 2);
 insert into vendas_has_produto values (5, 4, 4);
 insert into vendas_has_produto values (6, 2, 1);
 
+/* Exerc 1. */
 
+select *
+from vendas
+JOIN produto ON vendas.idvenda = produto.idproduto
+WHERE produto.descricao = 'Escova dental';
 
 
 
