@@ -60,7 +60,7 @@ SELECT P.descricao
 FROM Vendas V
 JOIN vendas_has_produto VP ON V.idvenda = VP.idvenda
 JOIN Produto P ON VP.idproduto = P.idproduto
-WHERE V.data_venda = '2024-01-23';
+WHERE V.data_venda = '2021-01-23';
 
 /* Exerc 4 */ 
 
